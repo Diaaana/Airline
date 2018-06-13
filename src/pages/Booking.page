@@ -1,0 +1,39 @@
+<apex:page controller="BookingController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Search Flights" action="{!searchFlights}"/>
+                <apex:commandButton value="Book Flight" action="{!bookFlight}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Flight</apex:outputLabel>
+                    <apex:inputField value="{!searchFlight.Flight__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Addon</apex:outputLabel>
+                    <apex:inputField value="{!searchFlight.Addon__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Date From</apex:outputLabel>
+                    <apex:inputField value="{!searchFlight.DateFrom__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Date To</apex:outputLabel>
+                    <apex:inputField value="{!searchFlight.DateTo__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlock title="Flights">
+                <apex:pageBlockTable value="{!filtrFlight}" var="flight">
+                    <apex:column value="{!flight.Flight__c}"/>
+                    <apex:column value="{!flight.Addon__c}"/>
+                    <apex:column value="{!flight.DateFrom__c}"/>
+                    <apex:column value="{!flight.DateTo__c}"/>
+                    <apex:column value="{!flight.Value__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

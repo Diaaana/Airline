@@ -1,0 +1,18 @@
+{
+    "projectName": "Airline",
+    "username": "dianaradomskaya@gmail.com",
+    "id": "3f3be330-6edc-11e8-9599-19de9b5be091",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://ap4.salesforce.com",
+    "workspace": "C:\\Users\\Asus\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "CustomObject",
+        "StaticResource"
+    ]
+}
