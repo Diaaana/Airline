@@ -47,7 +47,7 @@
 			"file": "src/pages/Booking.page",
 			"settings":
 			{
-				"buffer_size": 4690,
+				"buffer_size": 3721,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -56,7 +56,7 @@
 			"file": "src/classes/BookingController.cls",
 			"settings":
 			{
-				"buffer_size": 5272,
+				"buffer_size": 5974,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -164,15 +164,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4690,
+						"buffer_size": 3721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2930,
-								2930
+								0,
+								0
 							]
 						],
 						"settings":
@@ -195,15 +195,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5272,
+						"buffer_size": 5974,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								0,
+								0
 							]
 						],
 						"settings":

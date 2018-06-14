@@ -1,7 +1,6 @@
 public class BookingController {
     public BookedFlight__c searchFlight { get; set; }
     public List<Price__c> filtrFlight { get; set; }
-    public String dataJSON { get; set; }
     public String flightValue;
     public String addonValue;
     public String dateFromValue;
@@ -13,7 +12,6 @@ public class BookingController {
         this.addonValue = '';
         this.dateFromValue = '';
         this.dateToValue = '';
-        this.dataJSON = '';
     }
  
     public void searchFlights() {
@@ -68,8 +66,7 @@ public class BookingController {
             ' LIMIT 1000';
         
         List<Price__c> prices = (List<Price__c>)Database.query(query);
-        dataJSON = JSON.serialize(prices);
-        /*filtrFlight = prices;*/
+        filtrFlight = prices;
     }
     
     public void bookFlight() {
@@ -148,10 +145,10 @@ public class BookingController {
         }
         
         insert new BookedFlight__c(
-            Flight__c = this.searchFlight.Flight__c,
-            Addon__c = this.searchFlight.Addon__c,
-            DateFrom__c = this.searchFlight.DateFrom__c,
-            DateTo__c = this.searchFlight.DateTo__c,
+            Flight__c = flightValue,
+            Addon__c = addonValue,
+            DateFrom__c = Date.valueOf(dateFromValue),
+            DateTo__c = Date.valueOf(dateToValue),
             TotalPrice__c = flightAmount +  addonAmount
         );
     }

@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
+				"Fli",
+				"Flight__c\t(BookingController.cls)"
+			],
+			[
+				"Fi",
+				"Flight__c"
+			],
+			[
+				"Flight",
+				"Flight__r.Name"
+			],
+			[
+				"f",
+				"filtrFlight"
+			],
+			[
+				"dat",
+				"dataJSON"
+			],
+			[
+				"add",
+				"addonValue"
+			],
+			[
+				"d",
+				"dataJSON"
+			],
+			[
+				"dateT",
+				"dateToValue"
+			],
+			[
+				"ad",
+				"addonValue"
+			],
+			[
 				"fl",
-				"flight1"
+				"flightValue"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"fli",
+				"flight"
 			],
 			[
 				"date",
 				"dateFrom"
-			],
-			[
-				"add",
-				"addon"
 			],
 			[
 				"o",
@@ -28,14 +68,6 @@
 				"addMessage"
 			],
 			[
-				"dat",
-				"dateFrom"
-			],
-			[
-				"ad",
-				"addon-id"
-			],
-			[
 				"flight",
 				"flight-id"
 			]
@@ -44,19 +76,19 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
+			"file": "BookingController.cls",
 			"settings":
 			{
-				"buffer_size": 4690,
+				"buffer_size": 5822,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "BookingController.cls",
+			"file": "/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
 			"settings":
 			{
-				"buffer_size": 5272,
+				"buffer_size": 3745,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -90,7 +122,7 @@
 	},
 	"console":
 	{
-		"height": 157.0,
+		"height": 64.0,
 		"history":
 		[
 			"Package Control: Install Package",
@@ -115,6 +147,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
+		"/C/Users/Asus/Documents/Airline/src/classes/debug.sublime-project",
 		"/C/Users/Asus/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings"
 	],
 	"find":
@@ -160,50 +194,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4690,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2930,
-								2930
-							]
-						],
-						"settings":
-						{
-							"spell_check": false,
-							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1404.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "BookingController.cls",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5272,
+						"buffer_size": 5822,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								5564,
+								5564
 							]
 						],
 						"settings":
@@ -213,7 +216,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.8,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2652,
+								2652
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -228,7 +261,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"layout":
 	{
@@ -307,7 +340,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 59.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

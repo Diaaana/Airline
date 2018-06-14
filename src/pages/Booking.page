@@ -44,7 +44,7 @@
     <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered">
       <thead>
         <tr class="slds-text-title_caps">
-           <th scope="col">
+         <th scope="col">
             <div class="slds-truncate" title="Close Date">Flight</div>
         </th>
         <th scope="col">
@@ -66,7 +66,6 @@
 </table>
 </div>
 
-
 <script type="text/javascript">
 function getParameters() {
     let flight = document.querySelector('#flight-id').value;
@@ -75,7 +74,10 @@ function getParameters() {
     let dateTo = document.querySelector('#dateTo-id').value;
     giveParameters(flight, addon, dateFrom, dateTo);
 
-    /*var table = document.getElementById('tbody');
+}
+
+/*function showParameters() {
+    var table = document.getElementById('tbody');
     for (var i = 0; i <= 3; i++) {
         var tr = document.createElement('tr');
         for (var j = 0; j <= 3; j++) {
@@ -84,15 +86,15 @@ function getParameters() {
             tr.appendChild(td);
         }
         table.appendChild(tr);
-    }*/
-}
+    }
+}*/
 </script>
 
 <apex:actionFunction name="giveParameters" action="{!searchFlights}" reRender="view">
-<apex:param id="flight" name="flight" value="" /> 
-<apex:param id="addon" name="addon" value="" />
-<apex:param id="dateFrom" name="dateFrom" value="" />
-<apex:param id="dateTo" name="dateTo" value="" />
+    <apex:param id="flight" name="flight" value=""/> 
+    <apex:param id="addon" name="addon" value="" />
+    <apex:param id="dateFrom" name="dateFrom" value="" />
+    <apex:param id="dateTo" name="dateTo" value="" />
 </apex:actionFunction>
 </apex:form>
 
