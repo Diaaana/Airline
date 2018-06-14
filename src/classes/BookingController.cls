@@ -1,16 +1,30 @@
 public class BookingController {
     public BookedFlight__c searchFlight { get; set; }
     public List<Price__c> filtrFlight { get; set; }
+    public String dataJSON { get; set; }
+    public String flightValue;
+    public String addonValue;
+    public String dateFromValue;
+    public String dateToValue;
     
     public BookingController() {
         this.searchFlight = new BookedFlight__c();
+        this.flightValue = '';
+        this.addonValue = '';
+        this.dateFromValue = '';
+        this.dateToValue = '';
+        this.dataJSON = '';
     }
  
     public void searchFlights() {
-        
+        flightValue = ApexPages.currentPage().getParameters().get('flight');
+        addonValue = ApexPages.currentPage().getParameters().get('addon');
+        dateFromValue = ApexPages.currentPage().getParameters().get('dateFrom');
+        dateToValue = ApexPages.currentPage().getParameters().get('dateTo');
+
         ApexPages.getMessages().clear();
         
-        if (this.searchFlight.DateFrom__c > this.searchFlight.DateTo__c) {
+        if (Date.valueOf(dateFromValue) > Date.valueOf(dateToValue)) {
             ApexPages.addMessage(
                 new ApexPages.Message(
                     ApexPages.Severity.ERROR, 
@@ -19,8 +33,8 @@ public class BookingController {
             );
             return;
         }
-        
-        if (this.searchFlight.Flight__c == NULL && this.searchFlight.Addon__c == NULL || this.searchFlight.DateFrom__c == NULL || this.searchFlight.DateTo__c == NULL) {
+      
+        if (flightValue.equals('') && addonValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
             ApexPages.addMessage(
                 new ApexPages.Message(
                     ApexPages.Severity.ERROR, 
@@ -29,19 +43,20 @@ public class BookingController {
             );
             return;
         }
-        
+
         List<String> condition = new List<String>();
         
-        Id flightId = this.searchFlight.Flight__c;
-        Id addonId = this.searchFlight.Addon__c;
-        Date dateFrom = this.searchFlight.DateFrom__c;
-        Date dateTo = this.searchFlight.DateTo__c;
-        if (flightId != null && addonId == null) {
-            condition.add('Flight__c = :flightId');
-        } else if (flightId == null && addonId != null) {
-            condition.add('Addon__c = :addonId');
-        } else if (flightId != null && addonId != null) {
-            condition.add('Flight__c = :flightId AND Addon__c = :addonId');
+        String flightName = flightValue;
+        String addonName = addonValue;
+        Date dateFrom = Date.valueOf(dateFromValue);
+        Date dateTo = Date.valueOf(dateToValue);
+
+        if (flightName != null && addonName == null) {
+            condition.add('Flight__r.Name = :flightName');
+        } else if (flightName == null && addonName != null) {
+            condition.add('Addon__r.Name = :addonName');
+        } else if (flightName != null && addonName != null) {
+            condition.add('Flight__r.Name = :flightName AND Addon__r.Name = :addonName');
         }
         
         String query = 'SELECT Value__c, Flight__c, Addon__c, DateFrom__c, DateTo__c ' + 
@@ -52,15 +67,20 @@ public class BookingController {
             ' ORDER BY Value__c ASC ' +
             ' LIMIT 1000';
         
-        
         List<Price__c> prices = (List<Price__c>)Database.query(query);
-        filtrFlight = prices;
+        dataJSON = JSON.serialize(prices);
+        /*filtrFlight = prices;*/
     }
     
     public void bookFlight() {
+        flightValue = ApexPages.currentPage().getParameters().get('flight');
+        addonValue = ApexPages.currentPage().getParameters().get('addon');
+        dateFromValue = ApexPages.currentPage().getParameters().get('dateFrom');
+        dateToValue = ApexPages.currentPage().getParameters().get('dateTo');
+        
         ApexPages.getMessages().clear();
         
-        if (this.searchFlight.DateFrom__c > this.searchFlight.DateTo__c) {
+        if (Date.valueOf(dateFromValue) > Date.valueOf(dateToValue)) {
             ApexPages.addMessage(
                 new ApexPages.Message(
                     ApexPages.Severity.ERROR, 
@@ -69,8 +89,8 @@ public class BookingController {
             );
             return;
         }
-        
-        if (this.searchFlight.Flight__c == NULL && this.searchFlight.Addon__c == NULL || this.searchFlight.DateFrom__c == NULL || this.searchFlight.DateTo__c == NULL) {
+      
+        if (flightValue.equals('') && addonValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
             ApexPages.addMessage(
                 new ApexPages.Message(
                     ApexPages.Severity.ERROR, 
@@ -82,16 +102,17 @@ public class BookingController {
         
         List<String> condition = new List<String>();
         
-        Id flightId = this.searchFlight.Flight__c;
-        Id addonId = this.searchFlight.Addon__c;
-        Date dateFrom = this.searchFlight.DateFrom__c;
-        Date dateTo = this.searchFlight.DateTo__c;
-        if (flightId != null && addonId == null) {
-            condition.add('Flight__c = :flightId');
-        } else if (flightId == null && addonId != null) {
-            condition.add('Addon__c = :addonId');
-        } else if (flightId != null && addonId != null) {
-            condition.add('Flight__c = :flightId AND Addon__c = :addonId');
+        String flightName = flightValue;
+        String addonName = addonValue;
+        Date dateFrom = Date.valueOf(dateFromValue);
+        Date dateTo = Date.valueOf(dateToValue);
+
+        if (flightName != null && addonName == null) {
+            condition.add('Flight__r.Name = :flightName');
+        } else if (flightName == null && addonName != null) {
+            condition.add('Addon__r.Name = :addonName');
+        } else if (flightName != null && addonName != null) {
+            condition.add('Flight__r.Name = :flightName AND Addon__r.Name = :addonName');
         }
         
         String query = 'SELECT Value__c, Flight__c, Addon__c, DateFrom__c, DateTo__c ' + 
@@ -101,6 +122,7 @@ public class BookingController {
             ' AND DateTo__c >= :dateTo ' + 
             ' ORDER BY Value__c ASC ' +
             ' LIMIT 1000';
+        
         List<Price__c> prices = (List<Price__c>)Database.query(query);
         
         Price__c flightPrice = new Price__c();
@@ -117,7 +139,7 @@ public class BookingController {
         
         Decimal flightAmount = 0.0;
         Decimal addonAmount = 0.0;
-        Integer allocation = this.searchFlight.DateFrom__c.daysBetween(this.searchFlight.DateTo__c) + 1;
+        Integer allocation = dateFrom.daysBetween(dateTo) + 1;
         if (flightPrice.Id != null) {
             flightAmount = flightPrice.Value__c * allocation;
         } 
