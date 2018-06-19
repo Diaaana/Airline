@@ -56,6 +56,26 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>CityFrom__c</fullName>
+        <externalId>false</externalId>
+        <label>CityFrom</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CityTo__c</fullName>
+        <externalId>false</externalId>
+        <label>CityTo</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>FlightCompany__c</fullName>
         <externalId>false</externalId>
         <label>Flight Company</label>
@@ -69,16 +89,6 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
-        <fullName>From__c</fullName>
-        <externalId>false</externalId>
-        <label>From</label>
-        <length>20</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Number__c</fullName>
         <externalId>false</externalId>
         <label>Number</label>
@@ -90,14 +100,12 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>To__c</fullName>
+        <fullName>isBooked__c</fullName>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>To</label>
-        <length>20</length>
-        <required>false</required>
+        <label>isBooked</label>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Checkbox</type>
     </fields>
     <label>Flight</label>
     <listViews>

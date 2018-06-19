@@ -84,6 +84,17 @@
         <type>Date</type>
     </fields>
     <fields>
+        <fullName>FlightCode__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>FlightCode</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>Flight__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -120,12 +131,9 @@
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
-        <fullName>PriceValidationRule</fullName>
+        <fullName>DateValidationRule</fullName>
         <active>true</active>
-        <errorConditionFormula>AND (
-Flight__c == NULL,
-Addon__c == NULL
-)</errorConditionFormula>
-        <errorMessage>Flight or addon can&apos;t be empty!</errorMessage>
+        <errorConditionFormula>DateFrom__c &gt; DateTo__c</errorConditionFormula>
+        <errorMessage>DateFrom must be less than DateTo!</errorMessage>
     </validationRules>
 </CustomObject>

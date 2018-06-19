@@ -4,16 +4,128 @@
 		"selected_items":
 		[
 			[
+				"Book",
+				"BookedFlight__c"
+			],
+			[
+				"tr",
+				"trigger"
+			],
+			[
+				"Flight",
+				"Flight__r\t(Booking.page)"
+			],
+			[
+				"Fli",
+				"Flight__c"
+			],
+			[
+				"bo",
+				"bookedFlight"
+			],
+			[
+				"b",
+				"bookedFlight"
+			],
+			[
+				"F",
+				"Flight__c"
+			],
+			[
+				"n",
+				"numberOfFlights"
+			],
+			[
+				"add",
+				"addMessage"
+			],
+			[
+				"M",
+				"Message"
+			],
+			[
+				"City",
+				"CityFrom__c\t(Booking.page)"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"da",
+				"dataInTable"
+			],
+			[
+				"tabl",
+				"table"
+			],
+			[
+				"D",
+				"DateTo__c\t(BookingController.cls)"
+			],
+			[
+				"Price",
+				"Price__c"
+			],
+			[
+				"Da",
+				"DateFrom__c\t(BookingController.cls)"
+			],
+			[
+				"tab",
+				"tableData"
+			],
+			[
+				"table",
+				"tableData"
+			],
+			[
+				"pri",
+				"pricesFlights"
+			],
+			[
+				"ta",
+				"tableData"
+			],
+			[
+				"P",
+				"Price__c\t(BookingController.cls)"
+			],
+			[
+				"Flig",
+				"Flights"
+			],
+			[
+				"alert",
+				"alert('vsd\t(Booking.page)"
+			],
+			[
+				"p",
+				"prices"
+			],
+			[
+				"JS",
+				"JSON\t[Standard Apex Class]"
+			],
+			[
+				"Date",
+				"DateFrom__c"
+			],
+			[
+				"as",
+				"assignTo"
+			],
+			[
 				"fl",
-				"flight1"
+				"flightValue"
+			],
+			[
+				"on",
+				"oncomplete\t(String)"
 			],
 			[
 				"date",
 				"dateFrom"
-			],
-			[
-				"add",
-				"addon"
 			],
 			[
 				"o",
@@ -47,7 +159,7 @@
 			"file": "src/pages/Booking.page",
 			"settings":
 			{
-				"buffer_size": 3721,
+				"buffer_size": 4395,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -56,7 +168,16 @@
 			"file": "src/classes/BookingController.cls",
 			"settings":
 			{
-				"buffer_size": 5974,
+				"buffer_size": 4999,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/triggers/BookFlightTrigger.trigger",
+			"settings":
+			{
+				"buffer_size": 210,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -111,10 +232,15 @@
 		"/C/Users/Asus/Documents/Airline",
 		"/C/Users/Asus/Documents/Airline/src",
 		"/C/Users/Asus/Documents/Airline/src/classes",
-		"/C/Users/Asus/Documents/Airline/src/pages"
+		"/C/Users/Asus/Documents/Airline/src/pages",
+		"/C/Users/Asus/Documents/Airline/src/triggers"
 	],
 	"file_history":
 	[
+		"/C/Users/Asus/Documents/Airline/src/triggers/BookedFlightTrigger.trigger",
+		"/C/Users/Asus/Documents/Airline/src/pages/code.js",
+		"/C/Users/Asus/Documents/Airline/src/pages/js",
+		"/C/Users/Asus/Documents/Airline/src/pages/javascript.js",
 		"/C/Users/Asus/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings"
 	],
 	"find":
@@ -133,6 +259,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			");",
 			"div",
 			"        <apex:page controller=\"BookingController\">\n\n        <apex:slds />\n        <div class=\"slds-grid slds-wrap\">\n            <div class=\"slds-col slds-size_1-of-1\">\n                <div class=\"slds-align_absolute-center\">\n                    <button class=\"slds-button slds-button_neutral\">Search Flights</button>\n                    <button class=\"slds-button slds-button_brand\">Book Flight</button>\n                </div>\n            </div>\n            <div class=\"slds-col slds-size_1-of-2\">\n\n                <div class=\"slds-form-element\">\n                  <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n                  <div class=\"slds-form-element__control\">\n                    <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n                </div>\n            </div>\n        </div>\n        <div class=\"slds-col slds-size_1-of-2\">\n            <div class=\"slds-form-element\">\n              <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n              <div class=\"slds-form-element__control\">\n                <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n            </div>\n        </div>\n    </div>  \n<div class=\"slds-col slds-size_1-of-2\">\n\n        <div class=\"slds-form-element\">\n          <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n          <div class=\"slds-form-element__control\">\n            <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n        </div>\n    </div>\n    </div>\n    <div class=\"slds-col slds-size_1-of-2\">\n\n        <div class=\"slds-form-element\">\n          <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n          <div class=\"slds-form-element__control\">\n            <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n        </div>\n    </div>\n    </div>  \n    </div>\n\n\n    <apex:form >\n    <apex:pageBlock >\n    <apex:pageMessages />\n    <apex:pageBlockButtons >\n    <apex:commandButton value=\"Search Flights\" action=\"{!searchFlights}\"/>\n    <apex:commandButton value=\"Book Flight\" action=\"{!bookFlight}\"/>\n    </apex:pageBlockButtons>\n    <apex:pageBlockSection >\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Flight</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.Flight__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Addon</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.Addon__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Date From</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.DateFrom__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Date To</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.DateTo__c}\"/>\n    </apex:pageBlockSectionItem>\n    </apex:pageBlockSection>\n\n    <apex:pageBlock title=\"Flights\">\n    <apex:pageBlockTable value=\"{!filtrFlight}\" var=\"flight\">\n    <apex:column value=\"{!flight.Flight__c}\"/>\n    <apex:column value=\"{!flight.Addon__c}\"/>\n    <apex:column value=\"{!flight.DateFrom__c}\"/>\n    <apex:column value=\"{!flight.DateTo__c}\"/>\n    <apex:column value=\"{!flight.Value__c}\"/>\n    </apex:pageBlockTable>\n    </apex:pageBlock>\n    </apex:pageBlock>\n    </apex:form>\n    </apex:page>",
 			"        <apex:page controller=\"BookingController\">\n\n        <apex:slds />\n        <div class=\"slds-grid slds-wrap\">\n            <div class=\"slds-col slds-size_1-of-1\">\n                <div class=\"slds-align_absolute-center\">\n                    <button class=\"slds-button slds-button_neutral\">Search Flights</button>\n                    <button class=\"slds-button slds-button_brand\">Book Flight</button>\n                </div>\n            </div>\n            <div class=\"slds-col slds-size_1-of-2\">\n\n                <div class=\"slds-form-element\">\n                  <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n                  <div class=\"slds-form-element__control\">\n                    <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n                </div>\n            </div>\n        </div>\n        <div class=\"slds-col slds-size_1-of-2\">\n            <div class=\"slds-form-element\">\n              <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n              <div class=\"slds-form-element__control\">\n                <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n            </div>\n        </div>\n    </div>  \n    <div class=\"slds-col slds-size_1-of-2\">\n\n        <div class=\"slds-form-element\">\n          <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n          <div class=\"slds-form-element__control\">\n            <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n        </div>\n    </div>\n    </div>\n    <div class=\"slds-col slds-size_1-of-2\">\n\n        <div class=\"slds-form-element\">\n          <label class=\"slds-form-element__label\" for=\"text-input-id-1\">Input Label</label>\n          <div class=\"slds-form-element__control\">\n            <input type=\"text\" id=\"text-input-id-1\" class=\"slds-input\" placeholder=\"Placeholder Text\" />\n        </div>\n    </div>\n    </div>  \n    </div>\n\n\n    <apex:form >\n    <apex:pageBlock >\n    <apex:pageMessages />\n    <apex:pageBlockButtons >\n    <apex:commandButton value=\"Search Flights\" action=\"{!searchFlights}\"/>\n    <apex:commandButton value=\"Book Flight\" action=\"{!bookFlight}\"/>\n    </apex:pageBlockButtons>\n    <apex:pageBlockSection >\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Flight</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.Flight__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Addon</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.Addon__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Date From</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.DateFrom__c}\"/>\n    </apex:pageBlockSectionItem>\n    <apex:pageBlockSectionItem >\n    <apex:outputLabel >Date To</apex:outputLabel>\n    <apex:inputField value=\"{!searchFlight.DateTo__c}\"/>\n    </apex:pageBlockSectionItem>\n    </apex:pageBlockSection>\n\n    <apex:pageBlock title=\"Flights\">\n    <apex:pageBlockTable value=\"{!filtrFlight}\" var=\"flight\">\n    <apex:column value=\"{!flight.Flight__c}\"/>\n    <apex:column value=\"{!flight.Addon__c}\"/>\n    <apex:column value=\"{!flight.DateFrom__c}\"/>\n    <apex:column value=\"{!flight.DateTo__c}\"/>\n    <apex:column value=\"{!flight.Value__c}\"/>\n    </apex:pageBlockTable>\n    </apex:pageBlock>\n    </apex:pageBlock>\n    </apex:form>\n    </apex:page>",
@@ -155,7 +282,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -164,15 +291,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3721,
+						"buffer_size": 4395,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4314,
+								4314
 							]
 						],
 						"settings":
@@ -183,10 +310,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1404.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -195,15 +322,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5974,
+						"buffer_size": 4999,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1591,
+								1591
 							]
 						],
 						"settings":
@@ -213,10 +340,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.8,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/triggers/BookFlightTrigger.trigger",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -228,7 +383,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"layout":
 	{
@@ -307,7 +462,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 50.0,
+	"side_bar_width": 304.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

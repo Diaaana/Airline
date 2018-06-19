@@ -1,27 +1,42 @@
 <apex:page controller="BookingController">
-<apex:form id="form">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head></head>
+<body>
+    <apex:form id="form">
+
+    <apex:pageMessages id="message"/>
+
+    <apex:actionFunction name="giveParameters" action="{!searchFlights}" reRender="view" oncomplete="showParameters({!tableData})">
+    <apex:param id="cityFrom" name="cityFrom" value="" assignTo="{!cityFromValue}" /> 
+    <apex:param id="cityTo" name="cityTo" value="" assignTo="{!cityToValue}" />
+    <apex:param id="dateFrom" name="dateFrom" value="" assignTo="{!dateFromValue}" />
+    <apex:param id="dateTo" name="dateTo" value="" assignTo="{!dateToValue}" />
+</apex:actionFunction>
+<apex:actionFunction name="bookFlight" action="{!bookFlight}" reRender="view"/>
+
+</apex:form>
+
 <apex:slds />
 <div class="slds-grid slds-wrap">
-    <apex:pageMessages />
     <div class="slds-col slds-size_1-of-1">
         <div class="slds-align_absolute-center">
-            <button class="slds-button slds-button_neutral" onclick="getParameters()">Search Flights</button>
-            <button class="slds-button slds-button_brand">Book Flight</button>
+            <button class="slds-button slds-button_neutral" onclick="getParameters()" reRender="message">Search Flights</button>
+            <button class="slds-button slds-button_brand" onclick="bookFlight()">Book Flight</button>
         </div>
     </div>
     <div class="slds-col slds-size_1-of-2">
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="text-input-id-1">Flight</label>
+            <label class="slds-form-element__label" for="text-input-id-1">From</label>
             <div class="slds-form-element__control">
-                <input type="text" id="flight-id" class="slds-input" placeholder="Flight" />
+                <input type="text" id="cityFrom-id" class="slds-input" placeholder="From" />
             </div>
         </div>
     </div>
     <div class="slds-col slds-size_1-of-2">
         <div class="slds-form-element">
-            <label class="slds-form-element__label" for="text-input-id-1">Addon</label>
+            <label class="slds-form-element__label" for="text-input-id-1">To</label>
             <div class="slds-form-element__control">
-                <input type="text" id="addon-id" class="slds-input" placeholder="Addon" />
+                <input type="text" id="cityTo-id" class="slds-input" placeholder="To" />
             </div>
         </div>
     </div>  
@@ -44,58 +59,63 @@
     <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-table_col-bordered">
       <thead>
         <tr class="slds-text-title_caps">
-         <th scope="col">
-            <div class="slds-truncate" title="Close Date">Flight</div>
+           <th scope="col">
+            <div class="slds-truncate" title="Flight">From</div>
         </th>
         <th scope="col">
-            <div class="slds-truncate" title="Account Name">Addon</div>
+            <div class="slds-truncate" title="Flight">To</div>
         </th>
         <th scope="col">
-            <div class="slds-truncate" title="Close Date">Date From</div>
+            <div class="slds-truncate" title="Date From">Date From</div>
         </th>
         <th scope="col">
-            <div class="slds-truncate" title="Stage">Date To</div>
+            <div class="slds-truncate" title="Date To">Date To</div>
         </th>
         <th scope="col">
-            <div class="slds-truncate" title="Confidence">Price</div>
+            <div class="slds-truncate" title="Price">Price</div>
         </th>
     </tr>
 </thead>
+
 <tbody id="tbody">
 </tbody>
+
 </table>
 </div>
 
 <script type="text/javascript">
+
 function getParameters() {
-    let flight = document.querySelector('#flight-id').value;
-    let addon = document.querySelector('#addon-id').value;
+
+    let cityFrom = document.querySelector('#cityFrom-id').value;
+    let cityTo = document.querySelector('#cityTo-id').value;
     let dateFrom = document.querySelector('#dateFrom-id').value;
     let dateTo = document.querySelector('#dateTo-id').value;
-    giveParameters(flight, addon, dateFrom, dateTo);
+    giveParameters(cityFrom, cityTo, dateFrom, dateTo);
 
-}
+};
 
-/*function showParameters() {
-    var table = document.getElementById('tbody');
-    for (var i = 0; i <= 3; i++) {
-        var tr = document.createElement('tr');
-        for (var j = 0; j <= 3; j++) {
-            var td = document.createElement('td');
-            td.innerHTML = j;
-            tr.appendChild(td);
-        }
-        table.appendChild(tr);
+function showParameters(tableData) {
+
+    let table = document.getElementById('tbody');
+    let dataInTable = '';
+
+    for (let i = 0; i < tableData.Flights.length; i++) {
+        dataInTable += '<tr>' +
+        '<td>' + tableData.Flights[i].Flight__r.CityFrom__c + '</td>' +
+        '<td>' + tableData.Flights[i].Flight__r.CityTo__c + '</td>' +
+        '<td>' + tableData.Flights[i].DateFrom__c + '</td>' +
+        '<td>' + tableData.Flights[i].DateTo__c + '</td>' +
+        '<td>' + tableData.Flights[i].Value__c + '</td>' +
+        '</tr>';
     }
-}*/
+
+    table.innerHTML = dataInTable;
+};
+
 </script>
 
-<apex:actionFunction name="giveParameters" action="{!searchFlights}" reRender="view">
-    <apex:param id="flight" name="flight" value=""/> 
-    <apex:param id="addon" name="addon" value="" />
-    <apex:param id="dateFrom" name="dateFrom" value="" />
-    <apex:param id="dateTo" name="dateTo" value="" />
-</apex:actionFunction>
-</apex:form>
+</body>
+</html>
 
 </apex:page>

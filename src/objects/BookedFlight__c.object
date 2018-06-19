@@ -56,18 +56,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Addon__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Addon</label>
-        <referenceTo>Addon__c</referenceTo>
-        <relationshipLabel>Booked Flights</relationshipLabel>
-        <relationshipName>Booked_Flights</relationshipName>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>DateFrom__c</fullName>
         <externalId>false</externalId>
         <label>Date From</label>
@@ -123,9 +111,14 @@
         <fullName>BookedValidationRule</fullName>
         <active>true</active>
         <errorConditionFormula>AND (
-Flight__c == NULL,
-Addon__c == NULL
+Flight__c == NULL
 )</errorConditionFormula>
         <errorMessage>Flight or addon can&apos;t be empty!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DateValidationRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>DateFrom__c &gt; DateTo__c</errorConditionFormula>
+        <errorMessage>DateFrom must be less than DateTo!</errorMessage>
     </validationRules>
 </CustomObject>
