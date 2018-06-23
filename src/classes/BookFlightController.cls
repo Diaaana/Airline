@@ -1,13 +1,17 @@
-public class BookingController {
-    public BookedFlight__c searchFlight { get; set; }
+public class BookFlightController {
+	public BookedFlight__c searchFlight { get; set; }
     public String cityFromValue { get; set; }
     public String cityToValue { get; set; }
     public String dateFromValue { get; set; }
     public String dateToValue { get; set; }
     public String tableData { get; set; }
     public Map<String, List<Price__c>> tableDataMap { get; set; }
+    public List<Price__c> addonPrices { get; set; }
+    public String foodValue { get; set; }
+    public String pillowValue { get; set; }
+    public String plaidValue { get; set; }
     
-    public BookingController() {
+    public BookFlightController() {
         this.searchFlight = new BookedFlight__c();
         this.cityFromValue = '';
         this.cityToValue = '';
@@ -15,11 +19,15 @@ public class BookingController {
         this.dateToValue = '';
         this.tableData = '';
         this.tableDataMap = new Map<String, List<Price__c>>();
+        this.addonPrices = [SELECT Addon__r.Name, Name, Value__c FROM Price__c WHERE Addon__r.Name != NULL];
+        this.foodValue = '';
+        this.pillowValue = '';
+        this.plaidValue = '';
     }
  
     public void searchFlights() {
 
-        /*ApexPages.getMessages().clear();*/
+        ApexPages.getMessages().clear();
 
         if (cityFromValue.equals('') && cityToValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
             ApexPages.addmessage(
@@ -52,15 +60,8 @@ public class BookingController {
         if (cityFrom != null && cityTo != null) {
             condition.add('Flight__r.CityFrom__c = :cityFrom AND Flight__r.CityTo__c = :cityTo');
         } 
-        /*if (flightName != null && addonName == null) {
-            condition.add('Flight__r.Name = :flightName');
-        } else if (flightName == null && addonName != null) {
-            condition.add('Addon__r.Name = :addonName');
-        } else if (flightName != null && addonName != null) {
-            condition.add('Flight__r.Name = :flightName AND Addon__r.Name = :addonName');
-        }*/
         
-        String query = 'SELECT Value__c, Flight__r.CityFrom__c, Flight__r.CityTo__c, DateFrom__c, DateTo__c ' + 
+        String query = 'SELECT Flight__r.CityFrom__c, Flight__r.CityTo__c, DateFrom__c, DateTo__c, Value__c ' + 
             ' FROM Price__c ' + 
             ' WHERE ' + String.join(condition, ' AND ') + 
             ' AND DateFrom__c <= :dateFrom ' +
@@ -74,8 +75,8 @@ public class BookingController {
         tableDataMap.put('Flights', pricesFlights);
         tableData = JSON.serialize(tableDataMap);
     }
-    
-    public void bookFlight() {
+
+    public PageReference bookFlight() {
         
         String cityFrom = cityFromValue;
         String cityTo = cityToValue;
@@ -101,26 +102,19 @@ public class BookingController {
         numberOfFlights = pricesFlights.size();
         
         Price__c flightPrice = new Price__c();
-        /*Price__c addonPrice = new Price__c();*/
         
         for (Price__c price : pricesFlights) {
             if (price.Flight__c != null) {
                 flightPrice = price;
             }
-            /*if (price.Addon__c != null) {
-                addonPrice = price;
-            }*/
         }
         
         Decimal flightAmount = 0.0;
-        /*Decimal addonAmount = 0.0;*/
         Integer allocation = dateFrom.daysBetween(dateTo) + 1;
+
         if (flightPrice.Id != null) {
             flightAmount = flightPrice.Value__c * allocation;
         } 
-        /*if (addonPrice.Id != null) {
-            addonAmount = addonPrice.Value__c * allocation;
-        }*/
 
         Flight__c bookedFlight = new Flight__c();
         bookedFlight = pricesFlights[numberOfFlights-1].Flight__r;
@@ -130,17 +124,55 @@ public class BookingController {
             Flight__c = pricesFlights[numberOfFlights-1].Flight__c,
             DateFrom__c = dateFrom,
             DateTo__c = dateTo,
-            TotalPrice__c = flightAmount/* +  addonAmount*/
+            TotalPrice__c = flightAmount
         );
 
+        return Page.pageAddon;
     }
 
-    /*public PageReference goToPageFlight() {
-        return Page;
+    public PageReference goToAddonPage() {
+
+        if (cityFromValue.equals('') && cityToValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
+            ApexPages.addmessage(
+                new ApexPages.message(
+                    ApexPages.severity.ERROR, 
+                    'Fields can not be empty'
+                )
+            );
+            return Page.pageFlight;
+        }
+
+        return Page.pageAddon;
     }
 
-    public PageReference goToPageAddon() {
-        return Page;
+    public void bookAddon() {
+        String condition = '';
+
+        if (foodValue != '' && pillowValue != '' && plaidValue != '') {
+            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :pillowValue OR Addon__r.Name = :plaidValue';
+        } else if (foodValue != '' && pillowValue != '') {
+            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :pillowValue';
+        } else if (pillowValue != '' && plaidValue != '') {
+            condition = 'Addon__r.Name = :pillowValue OR Addon__r.Name = :plaidValue';
+        } else if (foodValue != '' && plaidValue != '') {
+            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :plaidValue';
+        } else if (foodValue != '') {
+            condition = 'Addon__r.Name = :foodValue';
+        } else if (plaidValue != '') {
+            condition = 'Addon__r.Name = :plaidValue';
+        } else if (pillowValue != '') {
+            condition = 'Addon__r.Name = :pillowValue';
+        }
+
+        String query = 'SELECT Addon__c, Name, Value__c FROM Price__c WHERE ' + condition + ' ';
+        List<Price__c> selectAddons = (List<Price__c>) Database.query(query);
+
+        //update BookedFlight__c with Addons
+        //number of addons ???
+        
     }
-    */
+
+    public PageReference goToFlightPage() {
+        return Page.pageFlight;
+    }
 }

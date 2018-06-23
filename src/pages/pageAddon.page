@@ -1,0 +1,134 @@
+<apex:page controller="BookFlightController">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head></head>
+<body>
+<apex:form >
+    <apex:pageMessages />
+<apex:actionFunction name="goToFlightPage" action="{!goToFlightPage}" />
+<apex:actionFunction name="setAddons" action="{!bookAddon}" reRender="view">
+    <apex:param id="food" name="foodValue" value="" assignTo="{!foodValue}" /> 
+    <apex:param id="pillow" name="pillowValue" value="" assignTo="{!pillowValue}" />
+    <apex:param id="plaid" name="plaidValue" value="" assignTo="{!plaidValue}" />
+</apex:actionFunction>
+</apex:form>
+<apex:slds />
+<div class="slds-grid slds-wrap">
+	<div class="slds-col slds-size_1-of-1">
+		<div class="slds-align_absolute-center">
+			<button class="slds-button slds-button_neutral" onclick="goToFlightPage()" reRender="message">Previous Page</button>
+		</div>
+	</div>
+	<div class="slds-m-vertical--x-large"></div>
+	<table class="slds-table slds-table_bordered slds-table_cell-buffer">
+		<thead>
+			<tr class="slds-text-title_caps">
+				<th scope="col">
+					<div class="slds-truncate" title="Name">Name</div>
+				</th>
+				<th scope="col">
+					<div class="slds-truncate" title="Price">Price</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row" data-label="Addon Name">
+					<div class="slds-truncate" title="Addon Name">{!addonPrices[0].Name}</div>
+				</th>
+				<td data-label="Price">
+					<div class="slds-truncate" title="Price">{!addonPrices[0].Value__c}</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row" data-label="Addon Name">
+					<div class="slds-truncate" title="Addon Name">{!addonPrices[1].Name}</div>
+				</th>
+				<td data-label="Price">
+					<div class="slds-truncate" title="Price">{!addonPrices[1].Value__c}</div>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row" data-label="Addon Name">
+					<div class="slds-truncate" title="Addon Name">{!addonPrices[2].Name}</div>
+				</th>
+				<td data-label="Price">
+					<div class="slds-truncate" title="Price">{!addonPrices[2].Value__c}</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="slds-m-vertical--x-large"></div>
+	<fieldset class="slds-form-element">
+		<legend class="slds-form-element__legend slds-form-element__label">Your choiсe: </legend>
+		<div class="slds-form-element__control">
+			<div class="slds-checkbox_button-group">
+				<span class="slds-button slds-checkbox_button">
+					<input type="checkbox" id="food" value="food" name="checkbox" />
+					<label class="slds-checkbox_button__label" for="food">
+						<span class="slds-checkbox_faux">Food</span>
+					</label>
+				</span>
+				<span class="slds-button slds-checkbox_button">
+					<input type="checkbox" id="plaid" value="plaid" name="checkbox" />
+					<label class="slds-checkbox_button__label" for="plaid">
+						<span class="slds-checkbox_faux">Plaid</span>
+					</label>
+				</span>
+				<span class="slds-button slds-checkbox_button">
+					<input type="checkbox" id="pillow" value="pillow" name="checkbox" />
+					<label class="slds-checkbox_button__label" for="pillow">
+						<span class="slds-checkbox_faux">Pillow</span>
+					</label>
+				</span>
+			</div>
+		</div>
+	</fieldset>
+	<div class="slds-m-vertical--x-large"></div>
+	<div class="slds-col slds-size_1-of-1">
+		<div class="slds-align_absolute-center">
+			<button class="slds-button slds-button_neutral" onclick="bookAddon()">Book Addon</button>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	function bookAddon() {
+		let foodValue = '';
+		let pillowValue = '';
+		let plaidValue = '';
+
+		if (food.checked) {
+			foodValue = 'Food';
+		} 
+
+		if (pillow.checked) {
+			pillowValue = 'Pillow';
+		}
+
+		if (plaid.checked) {
+			plaidValue = 'Plaid';
+		}
+
+		if (foodValue != '' && pillowValue != '' && plaidValue != '') {
+			setAddons(foodValue, pillowValue, plaidValue);
+		} else if (foodValue != '' && pillowValue != '') {
+			setAddons(foodValue, pillowValue);
+		} else if (pillowValue != '' && plaidValue != '') {
+			setAddons(pillowValue, plaidValue);
+		} else if (foodValue != '' && plaidValue != '') {
+			setAddons(foodValue, plaidValue);
+		} else if (foodValue != '') {
+			setAddons(foodValue);
+		} else if (plaidValue != '') {
+			setAddons(plaidValue);
+		} else if (pillowValue != '') {
+			setAddons(pillowValue);
+		}
+	};
+</script>
+
+</body>
+</html>
+
+</apex:page>

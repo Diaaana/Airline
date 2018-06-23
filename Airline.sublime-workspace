@@ -4,6 +4,154 @@
 		"selected_items":
 		[
 			[
+				"P",
+				"Price__c"
+			],
+			[
+				"Addon",
+				"Addon__c"
+			],
+			[
+				"add",
+				"add"
+			],
+			[
+				"Ad",
+				"Addon__c"
+			],
+			[
+				"Page",
+				"PageReference"
+			],
+			[
+				"se",
+				"selectAddons"
+			],
+			[
+				"c",
+				"condition"
+			],
+			[
+				"a",
+				"addonPrices"
+			],
+			[
+				"A",
+				"Addon__r"
+			],
+			[
+				"pl",
+				"plaid"
+			],
+			[
+				"p",
+				"pillow"
+			],
+			[
+				"f",
+				"foodValue"
+			],
+			[
+				"fo",
+				"food"
+			],
+			[
+				"ape",
+				"apex:form\t(pageFlight.page)"
+			],
+			[
+				"B",
+				"BookingController\t(Booking.page)"
+			],
+			[
+				"goTo",
+				"goToPageAddon\t(Wizard.cls)"
+			],
+			[
+				"com",
+				"apex:commandButton"
+			],
+			[
+				"pageBlo",
+				"apex:pageBlockButtons"
+			],
+			[
+				"co",
+				"controller\t(String)"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"bok",
+				"bookedFlight"
+			],
+			[
+				"Fl",
+				"Flight__c"
+			],
+			[
+				"av",
+				"availablePrices"
+			],
+			[
+				"to",
+				"totalPrice"
+			],
+			[
+				"da",
+				"dateTo"
+			],
+			[
+				"dat",
+				"dateFrom"
+			],
+			[
+				"To",
+				"TotalPrice__c\t(BookingController.cls)"
+			],
+			[
+				"Dat",
+				"DateTo__c"
+			],
+			[
+				"date",
+				"date_to"
+			],
+			[
+				"Da",
+				"DateTo__c\t(BookingController.cls)"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"JSON",
+				"JSON\t[Standard Apex Class]"
+			],
+			[
+				"JS",
+				"JSON\t(BookingController.cls)"
+			],
+			[
+				"Rest",
+				"RestResponse\t[Standard Apex Class]"
+			],
+			[
+				"fl",
+				"flight"
+			],
+			[
+				"FL",
+				"Flight__c\t(BookingController.cls)"
+			],
+			[
+				"Fli",
+				"Flight__r"
+			],
+			[
 				"Book",
 				"BookedFlight__c"
 			],
@@ -14,10 +162,6 @@
 			[
 				"Flight",
 				"Flight__r\t(Booking.page)"
-			],
-			[
-				"Fli",
-				"Flight__c"
 			],
 			[
 				"bo",
@@ -36,10 +180,6 @@
 				"numberOfFlights"
 			],
 			[
-				"add",
-				"addMessage"
-			],
-			[
 				"M",
 				"Message"
 			],
@@ -52,10 +192,6 @@
 				"function"
 			],
 			[
-				"da",
-				"dataInTable"
-			],
-			[
 				"tabl",
 				"table"
 			],
@@ -66,10 +202,6 @@
 			[
 				"Price",
 				"Price__c"
-			],
-			[
-				"Da",
-				"DateFrom__c\t(BookingController.cls)"
 			],
 			[
 				"tab",
@@ -88,24 +220,12 @@
 				"tableData"
 			],
 			[
-				"P",
-				"Price__c\t(BookingController.cls)"
-			],
-			[
 				"Flig",
 				"Flights"
 			],
 			[
 				"alert",
 				"alert('vsd\t(Booking.page)"
-			],
-			[
-				"p",
-				"prices"
-			],
-			[
-				"JS",
-				"JSON\t[Standard Apex Class]"
 			],
 			[
 				"Date",
@@ -116,16 +236,8 @@
 				"assignTo"
 			],
 			[
-				"fl",
-				"flightValue"
-			],
-			[
 				"on",
 				"oncomplete\t(String)"
-			],
-			[
-				"date",
-				"dateFrom"
 			],
 			[
 				"o",
@@ -134,14 +246,6 @@
 			[
 				"pageM",
 				"apex:pageMessages"
-			],
-			[
-				"a",
-				"addMessage"
-			],
-			[
-				"dat",
-				"dateFrom"
 			],
 			[
 				"ad",
@@ -156,28 +260,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/pages/Booking.page",
+			"file": "src/classes/BookFlightHandler.cls",
 			"settings":
 			{
-				"buffer_size": 4395,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/classes/BookingController.cls",
-			"settings":
-			{
-				"buffer_size": 4999,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/triggers/BookFlightTrigger.trigger",
-			"settings":
-			{
-				"buffer_size": 210,
+				"buffer_size": 2532,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -232,11 +318,25 @@
 		"/C/Users/Asus/Documents/Airline",
 		"/C/Users/Asus/Documents/Airline/src",
 		"/C/Users/Asus/Documents/Airline/src/classes",
-		"/C/Users/Asus/Documents/Airline/src/pages",
-		"/C/Users/Asus/Documents/Airline/src/triggers"
+		"/C/Users/Asus/Documents/Airline/src/pages"
 	],
 	"file_history":
 	[
+		"/C/Users/Asus/Documents/Airline/src/classes/BookAddonController.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/BookFlightController.cls",
+		"/C/Users/Asus/Documents/Airline/src/pages/pageAddon.page",
+		"/C/Users/Asus/Documents/Airline/src/pages/pageFlight.page",
+		"/C/Users/Asus/Documents/Airline/src/classes/Cfa.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/BookingController.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/Wizard.cls",
+		"/C/Users/Asus/Documents/Airline/src/pages/page.page",
+		"/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
+		"/C/Users/Asus/Documents/Airline/src/pages/vbjkml.page",
+		"/C/Users/Asus/Documents/Airline/src/classes/BookFlightHandler.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/BookedFlightHandler.cls",
+		"/C/Users/Asus/Documents/Airline/src/triggers/BeforeBookedFlightTrigger.trigger",
+		"/C/Users/Asus/Documents/Airline/src/triggers/AfterBookedFlightTrigger.trigger",
+		"/C/Users/Asus/Documents/Airline/src/triggers/BeforeBookFlightTrigger.trigger",
 		"/C/Users/Asus/Documents/Airline/src/triggers/BookedFlightTrigger.trigger",
 		"/C/Users/Asus/Documents/Airline/src/pages/code.js",
 		"/C/Users/Asus/Documents/Airline/src/pages/js",
@@ -245,7 +345,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -287,50 +387,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/pages/Booking.page",
+					"file": "src/classes/BookFlightHandler.cls",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4395,
+						"buffer_size": 2532,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4314,
-								4314
-							]
-						],
-						"settings":
-						{
-							"spell_check": false,
-							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/classes/BookingController.cls",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4999,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1591,
-								1591
+								0,
+								0
 							]
 						],
 						"settings":
@@ -343,35 +412,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/triggers/BookFlightTrigger.trigger",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 210,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								90,
-								90
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -379,7 +420,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -410,7 +451,7 @@
 	"menu_visible": true,
 	"output.MavensMate-OutputPanel":
 	{
-		"height": 140.0
+		"height": 184.0
 	},
 	"output.find_results":
 	{
@@ -420,7 +461,7 @@
 	"project": "Airline.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
