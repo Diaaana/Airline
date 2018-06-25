@@ -6,10 +6,6 @@ public class BookFlightController {
     public String dateToValue { get; set; }
     public String tableData { get; set; }
     public Map<String, List<Price__c>> tableDataMap { get; set; }
-    public List<Price__c> addonPrices { get; set; }
-    public String foodValue { get; set; }
-    public String pillowValue { get; set; }
-    public String plaidValue { get; set; }
     
     public BookFlightController() {
         this.searchFlight = new BookedFlight__c();
@@ -19,10 +15,6 @@ public class BookFlightController {
         this.dateToValue = '';
         this.tableData = '';
         this.tableDataMap = new Map<String, List<Price__c>>();
-        this.addonPrices = [SELECT Addon__r.Name, Name, Value__c FROM Price__c WHERE Addon__r.Name != NULL];
-        this.foodValue = '';
-        this.pillowValue = '';
-        this.plaidValue = '';
     }
  
     public void searchFlights() {
@@ -127,52 +119,10 @@ public class BookFlightController {
             TotalPrice__c = flightAmount
         );
 
-        return Page.pageAddon;
-    }
+        ID flight = pricesFlights[numberOfFlights-1].Flight__c;
 
-    public PageReference goToAddonPage() {
-
-        if (cityFromValue.equals('') && cityToValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
-            ApexPages.addmessage(
-                new ApexPages.message(
-                    ApexPages.severity.ERROR, 
-                    'Fields can not be empty'
-                )
-            );
-            return Page.pageFlight;
-        }
-
-        return Page.pageAddon;
-    }
-
-    public void bookAddon() {
-        String condition = '';
-
-        if (foodValue != '' && pillowValue != '' && plaidValue != '') {
-            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :pillowValue OR Addon__r.Name = :plaidValue';
-        } else if (foodValue != '' && pillowValue != '') {
-            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :pillowValue';
-        } else if (pillowValue != '' && plaidValue != '') {
-            condition = 'Addon__r.Name = :pillowValue OR Addon__r.Name = :plaidValue';
-        } else if (foodValue != '' && plaidValue != '') {
-            condition = 'Addon__r.Name = :foodValue OR Addon__r.Name = :plaidValue';
-        } else if (foodValue != '') {
-            condition = 'Addon__r.Name = :foodValue';
-        } else if (plaidValue != '') {
-            condition = 'Addon__r.Name = :plaidValue';
-        } else if (pillowValue != '') {
-            condition = 'Addon__r.Name = :pillowValue';
-        }
-
-        String query = 'SELECT Addon__c, Name, Value__c FROM Price__c WHERE ' + condition + ' ';
-        List<Price__c> selectAddons = (List<Price__c>) Database.query(query);
-
-        //update BookedFlight__c with Addons
-        //number of addons ???
-        
-    }
-
-    public PageReference goToFlightPage() {
-        return Page.pageFlight;
+        PageReference nextPage = new PageReference('/apex/pageAddon?id=' + flight);
+        nextPage.setRedirect(true);
+        return nextPage;
     }
 }

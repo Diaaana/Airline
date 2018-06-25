@@ -3,17 +3,15 @@ global with sharing class BookFlightHandler  {
 
     @HttpPost
     global static String create() {
-        BookedFlight__c bookedFlight = new BookedFlight__c();
         RestRequest request = RestContext.request;
         RestResponse response = RestContext.response;
         Map<String, Object> params = new Map<String, Object>();
         Map<String, Object> result = new Map<String, Object>();
-        List<Price__c> availablePrices = new List<Price__c>();
+        BookedFlight__c bookedFlight = new BookedFlight__c();
 
         try {
             params = (Map<String, Object>) JSON.deserializeUntyped(request.requestBody.toString());
         } catch(JSONException ex) {
-            /*response.responseBody = JSON.serialize(result);*/
             result.put('message', 'Flight does not booked' + ex.getMessage() + ' ' + ex.getStackTraceString());
             result.put('status', 'failed');
         }
@@ -21,8 +19,8 @@ global with sharing class BookFlightHandler  {
         //get params
         Date dateFrom = Date.valueOf(params.get('date_from').toString());
         Date dateTo = Date.valueOf(params.get('date_to').toString());
-        availablePrices = [
-            SELECT Flight__r.Name
+        List<Price__c> availablePrices = [
+            SELECT Flight__r.Name, Value__c
             FROM Price__c
             WHERE DateFrom__c <= :dateFrom AND DateTo__c >= :dateTo
             LIMIT 100
@@ -50,16 +48,4 @@ global with sharing class BookFlightHandler  {
 
     }
 
-    public static void method() {
-        Map<String, Object> params = new Map<String, Object>();
-        HttpRequest req = new HttpRequest();
-        req.setEndpoint('https://ap4.salesforce.com/services/apexrest/book_flight');
-        req.setMethod('POST');
-        req.setHeader('Authorization', '00D6F000001c5Oy!AQsAQLzBK_IpTq2kaRFZ49cmCV_Pm0KGDRxEseV3o7TgKRuG08fhBNJUbSwtL58u6svDI');
-        req.setHeader('Content-type', 'application/json');
-
-        HTTPResponse res = new Http().send(req);
-        
-        params = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
-    }
 }

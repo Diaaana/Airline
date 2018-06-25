@@ -12,8 +12,7 @@
     <apex:param id="dateFrom" name="dateFrom" value="" assignTo="{!dateFromValue}" />
     <apex:param id="dateTo" name="dateTo" value="" assignTo="{!dateToValue}" />
 </apex:actionFunction>
-<apex:actionFunction name="goToAddonPage" action="{!goToAddonPage}" />
-<apex:actionFunction name="bookFlight" action="{!bookFlight}" />
+<apex:actionFunction name="bookFlight" action="{!bookFlight}"/>
 </apex:form>
 
 <apex:slds />
@@ -21,13 +20,7 @@
     <div class="slds-col slds-size_1-of-1">
         <div class="slds-align_absolute-center">
             <button class="slds-button slds-button_neutral" onclick="getParameters()" reRender="view">Search Flights</button>
-            <button class="slds-button slds-button_neutral" onclick="goToAddonPage()" reRender="view">Next Page</button>
-        </div>
-    </div>
-    <div class="slds-m-vertical--large"></div>
-    <div class="slds-col slds-size_1-of-1">
-        <div class="slds-align_absolute-center">
-            <button class="slds-button slds-button_neutral" onclick="bookFlight()" reRender="view">Book Flight</button>
+            <button class="slds-button slds-button_brand" onclick="bookFlight()" reRender="view">Book Flight</button>
         </div>
     </div>
     <div class="slds-m-vertical--x-large"></div>
