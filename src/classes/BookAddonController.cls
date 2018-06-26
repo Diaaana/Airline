@@ -11,7 +11,7 @@ public class BookAddonController {
         this.plaidValue = '';
     }
 
-	public void bookAddon() {
+	public PageReference bookAddon() {
         String condition = '';
 
         if (foodValue != '' && pillowValue != '' && plaidValue != '') {
@@ -41,6 +41,8 @@ public class BookAddonController {
                 Addon__c = selectAddons[i].Addon__c
             );
         }
+
+        return Page.pageFlight;
         
     }
 
