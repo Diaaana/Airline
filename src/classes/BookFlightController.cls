@@ -69,12 +69,34 @@ public class BookFlightController {
     }
 
     public PageReference bookFlight() {
+
+        ApexPages.getMessages().clear();
+
+        if (cityFromValue.equals('') && cityToValue.equals('') || dateFromValue.equals('') || dateToValue.equals('')) {
+            ApexPages.addmessage(
+                new ApexPages.message(
+                    ApexPages.severity.ERROR, 
+                    'Fields can not be empty'
+                )
+            );
+            return;
+        }
         
         String cityFrom = cityFromValue;
         String cityTo = cityToValue;
         Date dateFrom = Date.valueOf(dateFromValue);
         Date dateTo = Date.valueOf(dateToValue);
         Integer numberOfFlights = 0;
+
+        if (dateFrom > dateTo) {
+            ApexPages.addMessage(
+                new ApexPages.Message(
+                    ApexPages.Severity.ERROR, 
+                    'Date From can not be greater than Date To'
+                )
+            );
+            return;
+        }
 
         List<String> condition = new List<String>();
 
