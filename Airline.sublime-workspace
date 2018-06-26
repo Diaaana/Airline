@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"F",
+				"Flight__c"
+			],
+			[
+				"Fli",
+				"Flight__c"
+			],
+			[
+				"sen",
+				"PUBLIC setRedirect(Boolean redirect) \tSystem.PageReference"
+			],
+			[
+				"se",
+				"PUBLIC setRedirect(Boolean redirect) \tSystem.PageReference"
+			],
+			[
+				"page",
+				"pageAddon"
+			],
+			[
+				"ne",
+				"nextPage"
+			],
+			[
+				"pu",
+				"put"
+			],
+			[
+				"n",
+				"nextPage"
+			],
+			[
+				"Fl",
+				"Flight__r"
+			],
+			[
+				"f",
+				"flight"
+			],
+			[
+				"Fligh",
+				"Flight__c"
+			],
+			[
+				"si",
+				"PUBLIC size() \tInteger"
+			],
+			[
 				"P",
 				"Price__c"
 			],
@@ -24,10 +72,6 @@
 				"PageReference"
 			],
 			[
-				"se",
-				"selectAddons"
-			],
-			[
 				"c",
 				"condition"
 			],
@@ -46,10 +90,6 @@
 			[
 				"p",
 				"pillow"
-			],
-			[
-				"f",
-				"foodValue"
 			],
 			[
 				"fo",
@@ -80,16 +120,8 @@
 				"controller\t(String)"
 			],
 			[
-				"pu",
-				"public"
-			],
-			[
 				"bok",
 				"bookedFlight"
-			],
-			[
-				"Fl",
-				"Flight__c"
 			],
 			[
 				"av",
@@ -148,10 +180,6 @@
 				"Flight__c\t(BookingController.cls)"
 			],
 			[
-				"Fli",
-				"Flight__r"
-			],
-			[
 				"Book",
 				"BookedFlight__c"
 			],
@@ -170,14 +198,6 @@
 			[
 				"b",
 				"bookedFlight"
-			],
-			[
-				"F",
-				"Flight__c"
-			],
-			[
-				"n",
-				"numberOfFlights"
 			],
 			[
 				"M",
@@ -260,10 +280,28 @@
 	"buffers":
 	[
 		{
-			"file": "src/classes/BookFlightHandler.cls",
+			"file": "src/triggers/BeforeBookedFlightTrigger.trigger",
 			"settings":
 			{
-				"buffer_size": 2547,
+				"buffer_size": 499,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/BookAddonController.cls",
+			"settings":
+			{
+				"buffer_size": 2014,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/triggers/AfterBookedFlightTrigger.trigger",
+			"settings":
+			{
+				"buffer_size": 263,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -318,21 +356,22 @@
 		"/C/Users/Asus/Documents/Airline",
 		"/C/Users/Asus/Documents/Airline/src",
 		"/C/Users/Asus/Documents/Airline/src/classes",
-		"/C/Users/Asus/Documents/Airline/src/pages"
+		"/C/Users/Asus/Documents/Airline/src/pages",
+		"/C/Users/Asus/Documents/Airline/src/triggers"
 	],
 	"file_history":
 	[
+		"/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
+		"/C/Users/Asus/Documents/Airline/src/pages/pageFlight.page",
+		"/C/Users/Asus/Documents/Airline/src/pages/pageAddon.page",
 		"/C/Users/Asus/Documents/Airline/src/classes/BookAddonController.cls",
 		"/C/Users/Asus/Documents/Airline/src/classes/BookFlightController.cls",
-		"/C/Users/Asus/Documents/Airline/src/pages/pageAddon.page",
-		"/C/Users/Asus/Documents/Airline/src/pages/pageFlight.page",
-		"/C/Users/Asus/Documents/Airline/src/classes/Cfa.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/BookFlightHandler.cls",
 		"/C/Users/Asus/Documents/Airline/src/classes/BookingController.cls",
+		"/C/Users/Asus/Documents/Airline/src/classes/Cfa.cls",
 		"/C/Users/Asus/Documents/Airline/src/classes/Wizard.cls",
 		"/C/Users/Asus/Documents/Airline/src/pages/page.page",
-		"/C/Users/Asus/Documents/Airline/src/pages/Booking.page",
 		"/C/Users/Asus/Documents/Airline/src/pages/vbjkml.page",
-		"/C/Users/Asus/Documents/Airline/src/classes/BookFlightHandler.cls",
 		"/C/Users/Asus/Documents/Airline/src/classes/BookedFlightHandler.cls",
 		"/C/Users/Asus/Documents/Airline/src/triggers/BeforeBookedFlightTrigger.trigger",
 		"/C/Users/Asus/Documents/Airline/src/triggers/AfterBookedFlightTrigger.trigger",
@@ -382,24 +421,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/classes/BookFlightHandler.cls",
+					"file": "src/triggers/BeforeBookedFlightTrigger.trigger",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2547,
+						"buffer_size": 499,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1243,
-								1243
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/classes/BookAddonController.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1538,
+								1538
 							]
 						],
 						"settings":
@@ -408,11 +475,39 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.x": 60.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/triggers/AfterBookedFlightTrigger.trigger",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								238,
+								238
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -503,7 +598,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 304.0,
+	"side_bar_width": 330.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

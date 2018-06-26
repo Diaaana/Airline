@@ -30,7 +30,7 @@ public class BookAddonController {
             condition = 'Addon__r.Name = :pillowValue';
         }
 
-        String query = 'SELECT Addon__c, Name, Value__c FROM Price__c WHERE ' + condition + ' ';
+        String query = 'SELECT Addon__c, Name, Value__c FROM Price__c WHERE ' + condition + ' AND Flight__c = NULL';
         List<Price__c> selectAddons = (List<Price__c>) Database.query(query);
         
         ID flight = ApexPages.CurrentPage().getParameters().get('id');
